@@ -1,0 +1,20 @@
+package ar.com.educacionit.clase1;
+
+
+
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        ProductoDAO productoDAO = new ProductoDAO();
+
+        Producto producto = new Producto();
+        producto.setDescripcion("Laptop");
+        producto.setPrecio(1200.00);
+        producto.setFechaAlta(new Date());
+
+        productoDAO.guardarProducto(producto);
+
+        System.out.println("Producto guardado con éxito");
+    }
+}

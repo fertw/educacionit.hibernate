@@ -1,0 +1,21 @@
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuración de conexión a la base de datos -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/laboratorio1</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <!-- Configuración del dialecto SQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Mostrar las consultas SQL generadas -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Actualizar la base de datos automáticamente basado en las entidades -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Entidades mapeadas -->
+        <mapping class="com.example.model.Producto"/>
+    </session-factory>
+</hibernate-configuration>
