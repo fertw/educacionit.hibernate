@@ -1,33 +1,28 @@
 package ar.com.educacionit.clase1.util;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 public class HibernateUtil {
 	
-	// private static SessionFactory sessionFactory;
+	 private static SessionFactory sessionFactory;
 
-	// static {
-	// Configuration configuration = new Configuration();
-	// configuration.configure("hibernate.cfg.xml");
-	// sessionFactory = configuration.buildSessionFactory();
-	// }
+	    static {
+	        try {
+	            sessionFactory = new Configuration().configure().buildSessionFactory();
+	        } catch (Throwable ex) {
+	            throw new ExceptionInInitializerError(ex);
+	        }
+	    }
+	    
+	    public static void shutdown() {
+	        // Cerrar caches y conexiones
+	        getSessionFactory().close();
+	    }
 
-	// public static SessionFactory getSessionFactory() {
-	// return sessionFactory;
-	// }
+		public static SessionFactory getSessionFactory() {
+	        return sessionFactory;
 
-	// public static Session getSession() {
-	// return sessionFactory.openSession();
-	// }
-
-	// public static void closeSession(Session session) {
-	// if (session != null) {
-	// session.close();
-	// }
-	// }
-
-	// public static void closeSessionFactory() {
-	// if (sessionFactory != null) {
-	// sessionFactory.close();
-	// }
-	// }
+		}
 
 }
