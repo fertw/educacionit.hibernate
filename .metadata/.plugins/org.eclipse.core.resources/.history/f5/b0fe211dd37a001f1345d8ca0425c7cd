@@ -1,0 +1,5 @@
+package ar.com.educacionit.clase1.model;
+
+public class Producto {
+
+}

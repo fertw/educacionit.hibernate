@@ -1,0 +1,5 @@
+package ar.com.educacionit.clase1.util;
+
+public class HibernateUtil {
+
+}

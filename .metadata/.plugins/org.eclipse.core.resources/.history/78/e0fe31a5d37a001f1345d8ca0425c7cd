@@ -1,0 +1,17 @@
+package ar.com.educacionit.clase1.model;
+
+import java.util.Date;
+
+public class Producto {
+	
+	private Integer id;
+	private String nombre;
+	private Double precio;
+	private Date fechaAlta;
+	private Integer stock;
+	
+	public Producto() {
+		super();
+	}
+
+}
