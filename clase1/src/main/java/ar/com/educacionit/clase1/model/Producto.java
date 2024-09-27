@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="productos")
@@ -26,6 +28,7 @@ public class Producto {
 	private Double precio;
 	
 	@Column(name="fecha_alta", nullable=false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaAlta;
 	
 	@Column(name="stock", nullable=false)
@@ -87,6 +90,11 @@ public class Producto {
 
 	public void setStock(Integer stock) {
 		this.stock = stock;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+		
 	}	
 	
 }
